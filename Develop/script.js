@@ -1,5 +1,7 @@
 // Assignment code here
 
+// Welcome to my password generator. The following is, essentially, 4 functions in sequence and a couple of extra actions wrapped into a single button press.
+
 // setting up variables. I found an array on stackoverflow with all the letters so that made it a bit quicker.
 var underAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -54,14 +56,16 @@ function howLongTho() {
   return
 }
 // generating an array for the password, but there's a problem.
-// this method spits out an array with a patter that goes lowercase-uppercase-special-number and I don't like that
+// this method spits out an array with a pattern that goes lowercase-uppercase-special-number and I don't like that
 // so we're gonna shuffle it
 function passGenerator() {
   patternPassword = [];
   while (patternPassword.length < passwordLength) {
     // for lowercase
     if (wantsUnder && (patternPassword.length < passwordLength)) {
+      // get a random letter from the array
       var randomUnder = underAlphabet[Math.floor(Math.random() * underAlphabet.length)];
+      // push it to the patterned array.
       patternPassword.push(randomUnder);
     }
     // for uppercase
